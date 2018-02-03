@@ -1,0 +1,9 @@
+ext.artifactId = "${artifactId}-rest-client"
+
+dependencies {
+        compile "org.dreamscale:common-spring-boot-rest-feign:${commonSpringBootVersion}"
+}
+
+publishing_ext {
+    publication('mainTest')
+}
