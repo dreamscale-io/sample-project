@@ -6,9 +6,12 @@ import feign.Param;
 import feign.RequestLine;
 
 @Headers({
-        "Content-Type: application/json",
-        "Accept: application/json",
+        "Content-Type: text/plain",
+        "Accept: text/plain",
 })
 public interface GreetClient {
+
+    @RequestLine("GET " + ResourcePaths.GREET_PATH + "?name={name}")
+    String greet(@Param("name") String name);
 
 }
