@@ -10,6 +10,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
+@PersistenceTest
 @ActiveProfiles({"local", "test", "componentTest"})
 @SpringBootTest(
         classes = {ComponentTestConfig.class},
