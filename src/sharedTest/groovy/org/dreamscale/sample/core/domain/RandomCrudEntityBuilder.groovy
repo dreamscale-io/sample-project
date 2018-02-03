@@ -4,8 +4,9 @@ import static org.dreamscale.sample.core.CoreARandom.aRandom
 
 class RandomCrudEntityBuilder extends CrudEntity.CrudEntityBuilder {
 
-    public RandomCrudEntityBuilder() {
-        throw new RuntimeException("add some stuff")
+    RandomCrudEntityBuilder() {
+        id(aRandom.uuid())
+                .value(aRandom.text(10))
     }
 
 }

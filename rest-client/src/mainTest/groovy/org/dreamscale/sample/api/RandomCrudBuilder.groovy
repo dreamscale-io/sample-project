@@ -4,8 +4,9 @@ import static org.dreamscale.sample.api.RestClientARandom.aRandom
 
 class RandomCrudBuilder extends Crud.CrudBuilder {
 
-    public RandomCrudBuilder() {
-        throw new RuntimeException("add some stuff")
+    RandomCrudBuilder() {
+        id(aRandom.uuid())
+                .value(aRandom.text(10))
     }
 
 }

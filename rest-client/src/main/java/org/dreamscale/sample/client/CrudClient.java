@@ -1,9 +1,12 @@
 package org.dreamscale.sample.client;
 
+import org.dreamscale.sample.api.Crud;
 import org.dreamscale.sample.api.ResourcePaths;
 import feign.Headers;
 import feign.Param;
 import feign.RequestLine;
+
+import java.util.UUID;
 
 @Headers({
         "Content-Type: application/json",
