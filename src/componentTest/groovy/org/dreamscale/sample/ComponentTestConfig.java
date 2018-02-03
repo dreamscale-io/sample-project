@@ -1,6 +1,9 @@
 package org.dreamscale.sample;
 
 import org.dreamscale.feign.JacksonFeignBuilder;
+import org.springframework.context.annotation.Bean;
+import org.dreamscale.sample.client.CrudClient;
+
 import org.dreamscale.test.BaseTestConfig;
 import org.springframework.context.annotation.Bean;
 import org.dreamscale.sample.client.GreetClient;
@@ -18,6 +21,11 @@ public class ComponentTestConfig extends BaseTestConfig {
     @Bean
     public GreetClient greetClient() {
         return feignBuilder.target(GreetClient.class, baseUrl);
+    }
+
+    @Bean
+    public CrudClient crudClient() {
+        return feignBuilder.target(CrudClient.class, baseUrl);
     }
 
 }
