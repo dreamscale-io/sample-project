@@ -1,4 +1,10 @@
 databaseChangeLog:
 
   - include:
+      file: db/create_greeting.sql
+
+  - include:
+      file: db/create_user.sql
+
+  - include:
       file: db/create_crud.sql

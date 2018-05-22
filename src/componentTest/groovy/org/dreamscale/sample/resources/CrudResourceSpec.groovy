@@ -1,7 +1,8 @@
 package org.dreamscale.sample.resources
 
 import org.dreamscale.sample.ComponentTest
-import org.dreamscale.sample.api.Crud
+import org.dreamscale.sample.api.CrudInputDto
+import org.dreamscale.sample.api.CrudOutputDto
 import org.dreamscale.sample.client.CrudClient
 import org.dreamscale.sample.core.domain.CrudEntity
 import org.dreamscale.sample.core.domain.CrudRepository
@@ -28,13 +29,13 @@ class CrudResourceSpec extends Specification {
 
     def "should create"() {
         given:
-        Crud crud = aRandom.crud().build()
+        CrudInputDto crud = aRandom.crud().build()
 
         when:
-        crudClient.create(crud)
+        CrudOutputDto crudSaved = crudClient.create(crud)
 
         then:
-        assert crudRepository.findOne(crud.id).value == crud.value
+        assert crudRepository.findOne(crudSaved.id).value == crud.value
     }
     
     def "should delete"() {

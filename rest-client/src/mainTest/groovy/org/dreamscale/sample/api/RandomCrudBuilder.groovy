@@ -2,11 +2,10 @@ package org.dreamscale.sample.api;
 
 import static org.dreamscale.sample.api.RestClientARandom.aRandom
 
-class RandomCrudBuilder extends Crud.CrudBuilder {
+class RandomCrudBuilder extends CrudInputDto.CrudInputDtoBuilder {
 
-    RandomCrudBuilder() {
-        id(aRandom.uuid())
-                .value(aRandom.text(10))
-    }
+	RandomCrudBuilder() {
+		value(aRandom.text(10))
+	}
 
 }

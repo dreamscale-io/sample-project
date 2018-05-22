@@ -1,6 +1,7 @@
 package org.dreamscale.sample.client;
 
-import org.dreamscale.sample.api.Crud;
+import org.dreamscale.sample.api.CrudInputDto;
+import org.dreamscale.sample.api.CrudOutputDto;
 import org.dreamscale.sample.api.ResourcePaths;
 import feign.Headers;
 import feign.Param;
@@ -15,13 +16,10 @@ import java.util.UUID;
 public interface CrudClient {
 
     @RequestLine("GET " + ResourcePaths.CRUD_PATH + "/{id}")
-    Crud find(@Param("id") UUID id);
+    CrudOutputDto find(@Param("id") UUID id);
 
     @RequestLine("POST " + ResourcePaths.CRUD_PATH)
-    Crud create(Crud crud);
-
-    @RequestLine("PUT " + ResourcePaths.CRUD_PATH)
-    Crud update(Crud crud);
+    CrudOutputDto create(CrudInputDto crud);
 
     @RequestLine("DELETE " + ResourcePaths.CRUD_PATH + "/{id}")
     void delete(@Param("id") UUID id);

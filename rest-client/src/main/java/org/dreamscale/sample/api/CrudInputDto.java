@@ -11,9 +11,8 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Crud {
+public class CrudInputDto {
 
-    private UUID id;
     private String value;
 
 }
